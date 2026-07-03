@@ -91,6 +91,8 @@ namespace OngekiFumenEditor.Core.Utils
             }
         }
 
+        // Unity(.NET Standard 2.1+) has System.Linq.Enumerable.Append; only define for non-Unity
+#if !UNITY_5_3_OR_NEWER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerable<T> Append<T>(this IEnumerable<T> collection, T appendElement)
         {
@@ -98,6 +100,7 @@ namespace OngekiFumenEditor.Core.Utils
                 yield return item;
             yield return appendElement;
         }
+#endif
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerable<T> FilterNull<T>(this IEnumerable<T> collection) => collection.Where(x => x != null);

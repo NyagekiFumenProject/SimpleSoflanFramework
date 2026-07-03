@@ -673,7 +673,7 @@ namespace OngekiFumenEditor.Core.Base.Collections
                 else
                 {
                     var overLeftTGrid = leftTGrid - (absSpeed == 0 ? GridOffset.Zero : cur.Bpm.LengthConvertToOffset(newLeftRemain / absSpeed));
-                    leftMergeds = OngekiFumenEditor.Core.Utils.LinqExtensionMethod.Append(leftMergeds, new VisibleTGridRange(overLeftTGrid ?? TGrid.Zero, leftTGrid));
+                    leftMergeds = leftMergeds.Append(new VisibleTGridRange(overLeftTGrid ?? TGrid.Zero, leftTGrid));
                 }
             }
 
@@ -685,11 +685,11 @@ namespace OngekiFumenEditor.Core.Base.Collections
                 {
                     var absNextSpeed = Math.Abs(next.Speed);
                     var overRightTGrid = rightTGrid + (absNextSpeed == 0 ? GridOffset.Zero : next.Bpm.LengthConvertToOffset(newRightRemain / absNextSpeed));
-                    rightMergeds = OngekiFumenEditor.Core.Utils.LinqExtensionMethod.Append(rightMergeds, new VisibleTGridRange(rightTGrid, overRightTGrid));
+                    rightMergeds = rightMergeds.Append(new VisibleTGridRange(rightTGrid, overRightTGrid));
                 }
             }
 
-            return OngekiFumenEditor.Core.Utils.LinqExtensionMethod.Append(leftMergeds, curRange).Concat(rightMergeds);
+            return leftMergeds.Append(curRange).Concat(rightMergeds);
         }
 
         private static void FillCalcSegment(int posIdx, double y, double leftRemain, double rightRemain, double actualViewHeight, IList<SoflanPoint> list, VisibleRangeQueryScratch scratch, List<VisibleTGridRange> output)
