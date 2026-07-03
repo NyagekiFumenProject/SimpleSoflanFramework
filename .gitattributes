@@ -1,0 +1,9 @@
+* text=auto
+
+*.cs text
+*.csproj text
+*.config text
+*.md text
+*.xml text
+*.gitignore text
+*.gitattributes text

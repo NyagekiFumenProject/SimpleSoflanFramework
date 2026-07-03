@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04DA2503-74D7-45C4-BA14-3DC43DD7FD4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleSoflanFramework.Core</RootNamespace>
+    <AssemblyName>SimpleSoflanFramework.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>preview</LangVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BPMChange.cs" />
+    <Compile Include="BpmList.cs" />
+    <Compile Include="BpmMathUtils.cs" />
+    <Compile Include="CollectionHelper.cs" />
+    <Compile Include="ComparerWrapper.cs" />
+    <Compile Include="GridBase.cs" />
+    <Compile Include="GridOffset.cs" />
+    <Compile Include="GridRange.cs" />
+    <Compile Include="IBinaryFindRangeEnumable.cs" />
+    <Compile Include="IDurationSoflan.cs" />
+    <Compile Include="IKeyframeSoflan.cs" />
+    <Compile Include="InterpolatableSoflan.cs" />
+    <Compile Include="Interpolation.cs" />
+    <Compile Include="IntervalTreeWrapper.cs" />
+    <Compile Include="IsExternalInit.cs" />
+    <Compile Include="ISoflan.cs" />
+    <Compile Include="ISoflanQueryable.cs" />
+    <Compile Include="ITimelineObject.cs" />
+    <Compile Include="KeyframeSoflan.cs" />
+    <Compile Include="LambdaActivator.cs" />
+    <Compile Include="LinqExtensionMethod.cs" />
+    <Compile Include="MathUtils.cs" />
+    <Compile Include="OngekiObjectBase.cs" />
+    <Compile Include="OngekiTimelineObjectBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyChangedBase.cs" />
+    <Compile Include="PropertyChangedBaseExtensionMethod.cs" />
+    <Compile Include="RandomHepler.cs" />
+    <Compile Include="RangeTree\IIntervalTree.cs" />
+    <Compile Include="RangeTree\IntervalTree.cs" />
+    <Compile Include="RangeTree\IntervalTreeNode.cs" />
+    <Compile Include="RangeTree\RangeValuePair.cs" />
+    <Compile Include="RangeValue.cs" />
+    <Compile Include="RemindableSortableCollection.cs" />
+    <Compile Include="Soflan.cs" />
+    <Compile Include="SoflanList.cs" />
+    <Compile Include="SoflanListMap.cs" />
+    <Compile Include="SoflanList_CachedPositionList.cs" />
+    <Compile Include="SortableCollection.cs" />
+    <Compile Include="TGrid.cs" />
+    <Compile Include="TGridCalculator.cs" />
+    <Compile Include="TGridSortList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

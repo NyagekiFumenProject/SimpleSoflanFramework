@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>SimpleSoflanFramework.Benchmarks.Net35</AssemblyName>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <TargetPath>$(OutputPath)$(AssemblyName).exe</TargetPath>
+    <GamePackageDir>F:\SDEZ_165\Package\</GamePackageDir>
+    <GameManagedDir>$(GamePackageDir)Sinmai_Data\Managed\</GameManagedDir>
+    <GameMonoRuntimeDll>$(GamePackageDir)MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll</GameMonoRuntimeDll>
+    <CscDll>$(MSBuildToolsPath)\Roslyn\bincore\csc.dll</CscDll>
+    <CoreProject>..\SimpleSoflanFramework.Core\SimpleSoflanFramework.Core.csproj</CoreProject>
+    <CoreTargetPath>..\SimpleSoflanFramework.Core\bin\$(Configuration)\SimpleSoflanFramework.Core.dll</CoreTargetPath>
+    <CoreTargetPdb>..\SimpleSoflanFramework.Core\bin\$(Configuration)\SimpleSoflanFramework.Core.pdb</CoreTargetPdb>
+  </PropertyGroup>
+
+  <Target Name="Build">
+    <MSBuild Projects="$(CoreProject)" Targets="Build" Properties="Configuration=$(Configuration)" />
+    <MakeDir Directories="$(OutputPath)" />
+    <Exec Command="dotnet &quot;$(CscDll)&quot; /noconfig /nostdlib+ /optimize+ /debug:pdbonly /target:exe /platform:anycpu /langversion:latest /define:TRACE /out:&quot;$(TargetPath)&quot; /reference:&quot;$(GameManagedDir)mscorlib.dll&quot; /reference:&quot;$(GameManagedDir)System.dll&quot; /reference:&quot;$(GameManagedDir)System.Core.dll&quot; /reference:&quot;$(CoreTargetPath)&quot; &quot;Program.cs&quot;" />
+    <Copy SourceFiles="$(CoreTargetPath)" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(CoreTargetPdb)" DestinationFolder="$(OutputPath)" Condition="Exists('$(CoreTargetPdb)')" />
+  </Target>
+
+  <Target Name="Clean">
+    <RemoveDir Directories="bin;obj" />
+  </Target>
+</Project>
