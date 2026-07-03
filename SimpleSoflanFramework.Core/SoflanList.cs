@@ -35,11 +35,11 @@ namespace OngekiFumenEditor.Core.Base.Collections
         public SoflanList(IEnumerable<ISoflan> initSoflanChanges = default)
         {
             OnSoflanPropertyChangedEvent += OnChilidrenSubPropsChangedEvent;
-            foreach (var item in initSoflanChanges ?? [new KeyframeSoflan()
+            foreach (var item in initSoflanChanges ?? new[]{new KeyframeSoflan()
             {
                 TGrid = new TGrid(0, 0),
                 Speed = 1f,
-            }])
+            }})
                 Add(item);
         }
 
