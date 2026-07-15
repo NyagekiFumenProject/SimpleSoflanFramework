@@ -10,9 +10,9 @@
     <GameManagedDir>$(GamePackageDir)Sinmai_Data\Managed\</GameManagedDir>
     <GameMonoRuntimeDll>$(GamePackageDir)MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll</GameMonoRuntimeDll>
     <CscDll>$(MSBuildToolsPath)\Roslyn\bincore\csc.dll</CscDll>
-    <CoreProject>..\SimpleSoflanFramework.Core\SimpleSoflanFramework.Core.csproj</CoreProject>
-    <CoreTargetPath>..\SimpleSoflanFramework.Core\bin\$(Configuration)\SimpleSoflanFramework.Core.dll</CoreTargetPath>
-    <CoreTargetPdb>..\SimpleSoflanFramework.Core\bin\$(Configuration)\SimpleSoflanFramework.Core.pdb</CoreTargetPdb>
+    <CoreProject>..\SimpleSoflanFramework.Core.NetFx472\SimpleSoflanFramework.Core.NetFx472.csproj</CoreProject>
+    <CoreTargetPath>..\SimpleSoflanFramework.Core.NetFx472\bin\$(Configuration)\SimpleSoflanFramework.Core.dll</CoreTargetPath>
+    <CoreTargetPdb>..\SimpleSoflanFramework.Core.NetFx472\bin\$(Configuration)\SimpleSoflanFramework.Core.pdb</CoreTargetPdb>
   </PropertyGroup>
 
   <Target Name="Build">

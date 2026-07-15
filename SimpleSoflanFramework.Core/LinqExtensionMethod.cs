@@ -91,8 +91,10 @@ namespace OngekiFumenEditor.Core.Utils
             }
         }
 
-        // Unity(.NET Standard 2.1+) has System.Linq.Enumerable.Append; only define for non-Unity
-#if !UNITY_5_3_OR_NEWER
+        // Unity(.NET Standard 2.1+) and .NET Framework 4.7.1+ have System.Linq.Enumerable.Append built-in;
+        // only define our own for consumers that lack it (e.g. net35). Consumers that already have it
+        // (Unity, net471+) should define HAS_SYSTEM_LINQ_APPEND to avoid ambiguous-call errors.
+#if !UNITY_5_3_OR_NEWER && !HAS_SYSTEM_LINQ_APPEND
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerable<T> Append<T>(this IEnumerable<T> collection, T appendElement)
         {

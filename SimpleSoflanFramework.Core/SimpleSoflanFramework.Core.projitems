@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>cce3b227-95d2-4bc1-b81b-fb20f05d094d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SimpleSoflanFramework.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BPMChange.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BpmList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BpmMathUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CollectionHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComparerWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GridBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GridOffset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GridRange.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IBinaryFindRangeEnumable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDurationSoflan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IKeyframeSoflan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InterpolatableSoflan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interpolation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IntervalTreeWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IsExternalInit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ISoflan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ISoflanQueryable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ITimelineObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyframeSoflan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LambdaActivator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LinqExtensionMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MathUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OngekiObjectBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OngekiTimelineObjectBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertyChangedBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertyChangedBaseExtensionMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RandomHepler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RangeTree\IIntervalTree.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RangeTree\IntervalTree.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RangeTree\IntervalTreeNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RangeTree\RangeValuePair.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RangeValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RemindableSortableCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Soflan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SoflanList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SoflanListMap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SoflanList_CachedPositionList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SortableCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TGrid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TGridCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TGridSortList.cs" />
+  </ItemGroup>
+</Project>
